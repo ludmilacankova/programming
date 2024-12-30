@@ -1,0 +1,18 @@
+# Ignorovat složky s logy
+logs/
+*.log
+
+# Ignorovat soubory vytvořené editorovými nástroji
+*.swp
+*.bak
+
+# Ignorovat node_modules (pro projekty využívající npm)
+node_modules/
+
+# Ignorovat build složky a soubory
+dist/
+build/
+
+# Ignorovat soubory konfigurace pro IDE
+.vscode/
+.idea/
