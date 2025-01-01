@@ -1,0 +1,122 @@
+//Basic reset ----------------------------------------
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+$spacing: 10px;
+
+// Fonts ----------------------------------------
+html {
+  font-family: "Sora", sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+}
+
+//Color ----------------------------------------
+$myColor1: #00ced1;
+$myColor2: #48d1cc;
+$myColor3: #40e0d0;
+$myColorLight: #d7ffff;
+
+//gray scale
+$black: #001f1f;
+$gray: #a7a7a7;
+$grayLight: #f0f0f0;
+$white: #ffffff;
+// ----------------------------------------
+
+body {
+  color: $black;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 460px;
+  border: 2px solid $myColor3;
+  border-radius: 4px;
+  margin: $spacing;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas {
+  border: 1px solid $myColor3;
+  border-radius: 4px;
+}
+
+h1,
+.shape-selection {
+  margin: $spacing;
+}
+
+// radiobutons ----------------------------------------
+.shape-selection {
+  display: flex;
+  gap: 10px;
+
+  label {
+    cursor: pointer;
+    position: relative;
+    padding-left: $spacing;
+    display: inline-block;
+  }
+
+  input[type="radio"] {
+    appearance: none;
+    margin-right: $spacing * 0.4;
+    color: $myColor3;
+  }
+
+  //marked
+  label:focus-within::before {
+    background-color: $myColor1;
+    border: 2px solid $myColor3;
+  }
+
+  //not marked
+  label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $spacing;
+    height: $spacing;
+    border: 1px solid $myColor3;
+    border-radius: 4px;
+    background-color: $myColorLight;
+    transition: background-color 0.3s, border 0.3s;
+  }
+
+  // hover
+  label:hover::before {
+    border: 2px solid $myColor1;
+  }
+}
+// ----------------------------------------

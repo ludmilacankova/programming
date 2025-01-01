@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  font-family: "Sora", sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+}
+
+body {
+  color: #001f1f;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 460px;
+  border: 2px solid #40e0d0;
+  border-radius: 4px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas {
+  border: 1px solid #40e0d0;
+  border-radius: 4px;
+}
+
+h1,
+.shape-selection {
+  margin: 10px;
+}
+
+.shape-selection {
+  display: flex;
+  gap: 10px;
+}
+.shape-selection label {
+  cursor: pointer;
+  position: relative;
+  padding-left: 10px;
+  display: inline-block;
+}
+.shape-selection input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin-right: 4px;
+  color: #40e0d0;
+}
+.shape-selection label:focus-within::before {
+  background-color: #00ced1;
+  border: 2px solid #40e0d0;
+}
+.shape-selection label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border: 1px solid #40e0d0;
+  border-radius: 4px;
+  background-color: #d7ffff;
+  transition: background-color 0.3s, border 0.3s;
+}
+.shape-selection label:hover::before {
+  border: 2px solid #00ced1;
+}/*# sourceMappingURL=main.css.map */
