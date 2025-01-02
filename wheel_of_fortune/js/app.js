@@ -9,6 +9,10 @@
  * - "Stop" button: Stops the animation.
  *
  * The initial state of the wheel is rendered statically.
+ *
+ * Author: LuCa
+ * Date: 2025-01-02
+ * Version: 1.0
  */
 
 window.onload = function () {
