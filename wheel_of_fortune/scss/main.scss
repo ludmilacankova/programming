@@ -1,0 +1,100 @@
+//Basic reset ----------------------------------------
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+$spacing: 10px;
+
+// Fonts ----------------------------------------
+html {
+  font-family: "Sora", sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+}
+
+//Color ----------------------------------------
+$myColorRed: #ef476f;
+$myColorOrange: #f78c6b;
+$myColorYellow: #ffd166;
+$myColorGreen: #06d6a0;
+$myColorBlue: #118ab2;
+$black: #073b4c;
+$white: #ffffff;
+// ----------------------------------------
+
+body {
+  color: $black;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 460x;
+  border: 2px solid $black;
+  border-radius: 4px;
+  margin: $spacing;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas {
+  border: 1px solid $black;
+  border-radius: 4px;
+  margin: $spacing;
+}
+
+h1 {
+  margin-top: $spacing;
+}
+
+//Butons ----------------------------------------
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: $spacing * 2;
+  margin-bottom: $spacing;
+
+  button {
+    padding: $spacing * 0.6 $spacing * 2;
+  }
+
+  #startButton,
+  #stopButton {
+    border-radius: 4px;
+    border: none;
+    font-size: 1.1rem;
+    transition: color 0.3s, background-color 0.3s; //color gradients
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); //shadow
+
+    &:hover {
+      color: $white;
+      transform: scale(1.1); //slight enlargement
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); //shadow
+    }
+  }
+
+  #startButton {
+    background: $myColorGreen;
+  }
+
+  #stopButton {
+    background: $myColorRed;
+  }
+}
