@@ -19,10 +19,11 @@ header {
 }
 
 //---------- header logo----------
-.logotyp {
-  display: flex;
-  align-items: center;
-  color: $colorPrimary;
+.logo {
+  img {
+    height: 40px;
+    margin-right: $spacing;
+  }
 }
 
 // ----------navigation----------
@@ -34,7 +35,7 @@ header {
   top: calc(100% + 0.5rem);
   right: 0;
 
-  background-color: $colorComplementaryLight;
+  background-color: $white;
 
   overflow: hidden;
   max-height: 0;
@@ -48,12 +49,29 @@ header {
   padding: $spacing;
   background: $white;
   color: $black;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: $colorPrimary;
+  transition: width 0.2s ease;
 }
 
 .menu a:hover {
-  background-color: $colorComplementaryLight;
-  color: $colorPrimary;
-  font-weight: 700;
+  background-color: transparent;
+  color: $black;
+  font-weight: 600;
+}
+
+.menu a:hover::after {
+  width: 100%;
 }
 
 // ----------hamburger icon----------
@@ -62,16 +80,16 @@ header {
 }
 
 .hamb-line {
-  background: $colorPrimary;
+  background: $black;
   display: block;
-  height: 4px;
+  height: 3px;
   position: relative;
   width: 2rem;
 }
 
 .hamb-line::before,
 .hamb-line::after {
-  background: $colorPrimary;
+  background: $black;
   content: "";
   display: block;
   height: 100%;
@@ -145,13 +163,11 @@ body:has(.side-menu:checked) {
     width: 0%;
     height: 2px;
     background-color: $colorPrimary;
-    transition: width 0.2s ease; // Plynulá animace rozšiřování
+    transition: width 0.2s ease;
   }
 
   .menu a:hover {
     background-color: transparent;
-    color: $colorPrimary;
-    font-weight: 700;
   }
 
   .menu a:hover::after {

@@ -22,7 +22,7 @@ $columnBaseWidth: math.percentage(math.div(1, $columns)); //width of one column
 .row {
   display: flex;
   flex-wrap: wrap;
-  background: $color_gray_light;
+  background: white;
 }
 
 [class*="col-"] {
