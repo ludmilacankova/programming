@@ -1,0 +1,22 @@
+//mixiny
+
+//----------border----------
+@mixin border($color: $colorPrimary, $width: 1px) {
+  border: $width solid $color;
+}
+
+//----------buttons----------
+@mixin my-button($color) {
+  padding: $spacing $spacing * 2;
+  background-color: $colorPrimary;
+  color: $white;
+  border: none;
+  border-radius: $spacing * 1.5;
+  font-size: $fontSizeBase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $colorPrimaryDark;
+  }
+}

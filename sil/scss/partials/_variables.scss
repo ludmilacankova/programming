@@ -1,0 +1,31 @@
+//----------color----------
+$colorPrimary: #15e1e6;
+$colorPrimaryDark: #0b8a8d;
+
+$colorComplementary: #ffd000;
+$colorComplementaryLight: #fffcf1;
+
+$colorShadow: rgba(0, 206, 209, 0.16);
+
+$black: #002728;
+$white: #f1ffff;
+
+//----------font size----------
+$fontSizeBase: 14px; // Default font size
+$fontSize-h1: 2rem;
+$fontSize-h2: 1.6rem;
+$fontSize-h3: 1.3rem;
+
+//----------basic gap----------
+$spacing: 10px;
+
+//----------basic box height----------
+$boxHeight: 300px;
+$boxWidth: 400px;
+
+//----------breakpoints----------
+$breakpointTablet: 800px;
+$breakpointComputer: 1024px;
+
+//----------maximum page width----------
+$pageMaxWidth: 1024px;

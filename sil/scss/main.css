@@ -1,0 +1,305 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.col-1 {
+  width: 8.3333333333%;
+}
+
+.col-2 {
+  width: 16.6666666667%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.3333333333%;
+}
+
+.col-5 {
+  width: 41.6666666667%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.3333333333%;
+}
+
+.col-8 {
+  width: 66.6666666667%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.3333333333%;
+}
+
+.col-11 {
+  width: 91.6666666667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  background: #f0f0f0;
+}
+
+[class*=col-] {
+  min-height: 1px;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+@media (max-width: 800px) {
+  [class*=col-] {
+    width: 100%;
+  }
+}
+html {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+strong {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+header {
+  width: 100%;
+  height: 4rem;
+  background: #ffffff;
+  padding: 0 10px;
+  position: sticky;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  border-bottom: 1px solid #00ced1;
+}
+
+.logotyp {
+  display: flex;
+  align-items: center;
+  color: #00ced1;
+  font-style: oblique;
+}
+
+.logo {
+  width: 0px;
+  height: 0px;
+  position: relative;
+  border-style: solid;
+  border-width: 1rem 1rem 1rem 1rem;
+  border-color: #00ced1 transparent #48d1cc #40e0d0;
+  border-radius: 50%;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.nav {
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 200px;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  z-index: 10;
+}
+
+.menu a {
+  position: relative;
+  display: block;
+  padding: 10px;
+  background: #ffffff;
+  color: #001a1a;
+}
+
+.menu a:hover {
+  background-color: #d7ffff;
+  color: #00ced1;
+  font-weight: 700;
+}
+
+.hamb {
+  cursor: pointer;
+}
+
+.hamb-line {
+  background: #00ced1;
+  display: block;
+  height: 4px;
+  position: relative;
+  width: 2rem;
+}
+
+.hamb-line::before,
+.hamb-line::after {
+  background: #00ced1;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.hamb-line::before {
+  top: 10px;
+}
+
+.hamb-line::after {
+  top: -10px;
+}
+
+.side-menu {
+  display: none;
+}
+
+.side-menu:checked ~ nav {
+  min-height: -moz-max-content;
+  min-height: max-content;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+  background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+body:has(.side-menu:checked) {
+  overflow: hidden;
+}
+
+@media (min-width: 800px) {
+  .nav {
+    max-height: none;
+    top: 0;
+    position: relative;
+    float: right;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: transparent;
+  }
+  .menu li {
+    float: left;
+  }
+  .menu a {
+    position: relative;
+    display: inline-block;
+    color: #001a1a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #00ced1;
+    transition: width 0.2s ease;
+  }
+  .menu a:hover {
+    background-color: transparent;
+    color: #00ced1;
+    font-weight: 700;
+  }
+  .menu a:hover::after {
+    width: 100%;
+  }
+  .hamb {
+    display: none;
+  }
+}
+.zapati {
+  background: #001a1a;
+  color: #ffffff;
+  font-size: 11.2px;
+  text-align: center;
+}
+
+body {
+  background: #001a1a;
+  color: #001a1a;
+}/*# sourceMappingURL=main.css.map */

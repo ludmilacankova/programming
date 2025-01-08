@@ -1,0 +1,172 @@
+//buttons, forms, navigation...
+
+//----------header----------
+header {
+  width: 100%;
+  height: 4rem;
+  background: $white;
+  padding: 0 $spacing;
+
+  position: sticky;
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+
+  border-bottom: 1px solid $colorPrimary;
+}
+
+//---------- header logo----------
+.logotyp {
+  display: flex;
+  align-items: center;
+  color: $colorPrimary;
+}
+
+// ----------navigation----------
+.nav {
+  width: max-content;
+  min-width: 200px;
+
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+
+  background-color: $colorComplementaryLight;
+
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  z-index: 10;
+}
+
+.menu a {
+  position: relative;
+  display: block;
+  padding: $spacing;
+  background: $white;
+  color: $black;
+}
+
+.menu a:hover {
+  background-color: $colorComplementaryLight;
+  color: $colorPrimary;
+  font-weight: 700;
+}
+
+// ----------hamburger icon----------
+.hamb {
+  cursor: pointer;
+}
+
+.hamb-line {
+  background: $colorPrimary;
+  display: block;
+  height: 4px;
+  position: relative;
+  width: 2rem;
+}
+
+.hamb-line::before,
+.hamb-line::after {
+  background: $colorPrimary;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.hamb-line::before {
+  top: $spacing;
+}
+
+.hamb-line::after {
+  top: -$spacing;
+}
+
+.side-menu {
+  display: none;
+}
+
+// ----------ikonka hamburgru po kliknutí----------
+.side-menu:checked ~ nav {
+  min-height: max-content;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+  background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+body:has(.side-menu:checked) {
+  overflow: hidden;
+}
+
+//----------media for menu----------
+
+//----------tablet----------
+@media (min-width: $breakpointTablet) {
+  .nav {
+    max-height: none;
+    top: 0;
+    position: relative;
+    float: right;
+    width: fit-content;
+    background-color: transparent;
+  }
+
+  .menu li {
+    float: left;
+  }
+
+  .menu a {
+    position: relative;
+    display: inline-block;
+    color: $black;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: $colorPrimary;
+    transition: width 0.2s ease; // Plynulá animace rozšiřování
+  }
+
+  .menu a:hover {
+    background-color: transparent;
+    color: $colorPrimary;
+    font-weight: 700;
+  }
+
+  .menu a:hover::after {
+    width: 100%;
+  }
+
+  .hamb {
+    display: none;
+  }
+}
+
+//----------footer----------
+.zapati {
+  background: $black;
+  color: $white;
+  font-size: $fontSizeBase * 0.8;
+  text-align: center;
+}

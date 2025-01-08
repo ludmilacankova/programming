@@ -1,0 +1,40 @@
+//Custom grid system implementation
+
+@use "sass:math";
+
+$columns: 12;
+$columnBaseWidth: math.percentage(math.div(1, $columns)); //width of one column
+
+@for $i from 1 through $columns {
+  //the loop creates classes and calculates their width
+  .col-#{$i} {
+    width: $columnBaseWidth * $i;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: $pageMaxWidth;
+  margin: 0 auto;
+  padding: 0 $spacing * 1.5;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  background: $color_gray_light;
+}
+
+[class*="col-"] {
+  //all columns starting with col-
+  min-height: 1px; //minimum height so they don't get lost when empty
+  padding: $spacing;
+  @include border(white, 1px); //dočasné ohraničení!
+}
+
+@media (max-width: $breakpointTablet) {
+  //on small screens, columns will have a width of 100% and stack under each other
+  [class*="col-"] {
+    width: 100%;
+  }
+}
