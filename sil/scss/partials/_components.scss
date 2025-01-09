@@ -8,6 +8,7 @@ header {
   padding: 0 $spacing;
 
   position: sticky;
+  z-index: 1;
 
   display: flex;
   flex-wrap: nowrap;
@@ -15,7 +16,8 @@ header {
   justify-content: space-between;
   align-content: center;
 
-  border-bottom: 1px solid $colorPrimary;
+  border-bottom: 2px solid $black;
+  box-shadow: 0 1px 3px $colorShadow;
 }
 
 //---------- header logo----------
@@ -40,7 +42,6 @@ header {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.3s ease-out;
-  z-index: 10;
 }
 
 .menu a {
@@ -50,7 +51,10 @@ header {
   background: $white;
   color: $black;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.1s ease;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 
 .menu a::after {
@@ -60,18 +64,22 @@ header {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: $colorPrimary;
-  transition: width 0.2s ease;
+  background-color: $colorPrimaryDark;
+  transition: width 0.1s ease;
 }
 
 .menu a:hover {
   background-color: transparent;
   color: $black;
-  font-weight: 600;
 }
 
 .menu a:hover::after {
   width: 100%;
+}
+
+.submenu {
+  padding-left: $spacing * 3;
+  padding: $spacing * 0.4 $spacing;
 }
 
 // ----------hamburger icon----------
@@ -110,7 +118,7 @@ header {
   display: none;
 }
 
-// ----------ikonka hamburgru po kliknutí----------
+// ----------hamburger icon after clicking----------
 .side-menu:checked ~ nav {
   min-height: max-content;
 }
@@ -141,6 +149,9 @@ body:has(.side-menu:checked) {
     float: right;
     width: fit-content;
     background-color: transparent;
+
+    overflow: visible;
+    max-height: none;
   }
 
   .menu li {
@@ -152,18 +163,7 @@ body:has(.side-menu:checked) {
     display: inline-block;
     color: $black;
     text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .menu a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: $colorPrimary;
-    transition: width 0.2s ease;
+    transition: color 0.1s ease;
   }
 
   .menu a:hover {
@@ -176,6 +176,25 @@ body:has(.side-menu:checked) {
 
   .hamb {
     display: none;
+  }
+
+  .submenu-item {
+    position: relative;
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-left: 0;
+    background-color: $white;
+    z-index: 2;
+    box-shadow: 0 1px 6px $colorShadow;
+  }
+
+  .submenu-item:hover .submenu {
+    display: block;
   }
 }
 

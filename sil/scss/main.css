@@ -107,6 +107,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
@@ -132,12 +133,14 @@ header {
   background: #f1ffff;
   padding: 0 10px;
   position: sticky;
+  z-index: 1;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   align-content: center;
-  border-bottom: 1px solid #15e1e6;
+  border-bottom: 2px solid #002728;
+  box-shadow: 0 1px 3px rgba(0, 206, 209, 0.4);
 }
 
 .logo img {
@@ -156,7 +159,6 @@ header {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.3s ease-out;
-  z-index: 10;
 }
 
 .menu a {
@@ -166,7 +168,9 @@ header {
   background: #f1ffff;
   color: #002728;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.1s ease;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 
 .menu a::after {
@@ -176,18 +180,22 @@ header {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: #15e1e6;
-  transition: width 0.2s ease;
+  background-color: #0b8a8d;
+  transition: width 0.1s ease;
 }
 
 .menu a:hover {
   background-color: transparent;
   color: #002728;
-  font-weight: 600;
 }
 
 .menu a:hover::after {
   width: 100%;
+}
+
+.submenu {
+  padding-left: 30px;
+  padding: 4px 10px;
 }
 
 .hamb {
@@ -257,6 +265,8 @@ body:has(.side-menu:checked) {
     width: -moz-fit-content;
     width: fit-content;
     background-color: transparent;
+    overflow: visible;
+    max-height: none;
   }
   .menu li {
     float: left;
@@ -266,17 +276,7 @@ body:has(.side-menu:checked) {
     display: inline-block;
     color: #002728;
     text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  .menu a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #15e1e6;
-    transition: width 0.2s ease;
+    transition: color 0.1s ease;
   }
   .menu a:hover {
     background-color: transparent;
@@ -286,6 +286,22 @@ body:has(.side-menu:checked) {
   }
   .hamb {
     display: none;
+  }
+  .submenu-item {
+    position: relative;
+  }
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-left: 0;
+    background-color: #f1ffff;
+    z-index: 2;
+    box-shadow: 0 1px 6px rgba(0, 206, 209, 0.4);
+  }
+  .submenu-item:hover .submenu {
+    display: block;
   }
 }
 .zapati {
